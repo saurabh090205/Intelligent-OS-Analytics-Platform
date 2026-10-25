@@ -1,0 +1,12 @@
+Oct 25 14:10:01 host-srv systemd[1]: Started Daily apt upgrade and clean activities.
+Oct 25 14:10:05 host-srv sshd[1420]: Failed password for invalid user admin from 192.168.1.105 port 42890 ssh2
+Oct 25 14:10:07 host-srv sshd[1420]: Failed password for invalid user admin from 192.168.1.105 port 42890 ssh2
+Oct 25 14:11:15 host-srv kernel: [ 4210.124] EXT4-fs (sda1): warning: mounting unchecked fs, running e2fsck is recommended
+Oct 25 14:12:44 host-srv kernel: [ 4299.882] Out of memory: Kill process 8912 (stress-ng-vm) score 842 or sacrifice child
+Oct 25 14:12:44 host-srv kernel: [ 4299.885] oom-killer: gfp_mask=0x100cca(GFP_HIGHUSER_MOVABLE), order=0, oom_score_adj=0
+Oct 25 14:12:45 host-srv kernel: [ 4300.012] Killed process 8912 (stress-ng-vm) total-vm:4289120kB, anon-rss:3910240kB, file-rss:0kB
+Oct 25 14:14:02 host-srv systemd[1]: nginx.service: Main process exited, code=dumped, status=11/SEGV
+Oct 25 14:14:02 host-srv systemd[1]: nginx.service: Failed with result 'core-dump'.
+Oct 25 14:15:20 host-srv kernel: [ 4455.109] traps: worker[9104] general protection fault ip:7f890124 sp:7ffc1290 error:0
+Oct 25 14:16:30 host-srv postfix/pickup[4910]: fatal: open /etc/postfix/main.cf: No space left on device
+Oct 25 14:17:00 host-srv CRON[9200]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
