@@ -10,19 +10,34 @@
 
 static void print_usage(const char *prog_name) {
     printf("Intelligent OS Analytics and Resource Management Platform\n");
-    printf("Backend C Engine - Phase 1: Process Monitoring & Metrics API\n\n");
+    printf("Full-Stack C Backend Engine - Phases 1-4 (All 7 Modules Active)\n\n");
     printf("Usage: %s [OPTIONS]\n", prog_name);
     printf("Options:\n");
     printf("  --port <port>     Set HTTP server port (default: 8080)\n");
     printf("  --host <ip>       Set HTTP server bind address (default: 127.0.0.1)\n");
     printf("  --help            Show this help message and exit\n");
-    printf("\nEndpoints:\n");
-    printf("  GET /api/health           - Backend health check & platform info\n");
-    printf("  GET /api/system/overview  - Overall CPU, memory, process counters & uptime\n");
-    printf("  GET /api/system/cpu       - CPU utilization, core stats, and model\n");
-    printf("  GET /api/system/memory    - Memory details (RAM, swap, free, cached, buffers)\n");
-    printf("  GET /api/processes        - Active accessible process list with CPU/memory\n");
-    printf("  GET /api/processes/:pid   - Detailed stats for a single process\n");
+    printf("\nPhase 1 - System Monitoring Endpoints:\n");
+    printf("  GET  /api/health                      - Health check & platform info\n");
+    printf("  GET  /api/system/overview             - CPU, memory, process counters & uptime\n");
+    printf("  GET  /api/system/cpu                  - CPU utilization, core stats, model\n");
+    printf("  GET  /api/system/memory               - RAM, swap, buffers, cached\n");
+    printf("  GET  /api/processes                   - Live process table with CPU/memory\n");
+    printf("  GET  /api/processes/:pid              - Single-process detail inspector\n");
+    printf("\nPhase 2 - Algorithmic Simulation Endpoints:\n");
+    printf("  POST /api/scheduling/simulate         - FCFS, SJF, SRTF, Priority, RR + recommendation\n");
+    printf("  GET  /api/scheduling/examples         - Preconfigured workload presets\n");
+    printf("  GET  /api/memory/forecast             - OLS regression memory exhaustion forecast\n");
+    printf("  GET  /api/memory/history              - Rolling utilization sample buffer\n");
+    printf("  POST /api/page-replacement/simulate   - FIFO, LRU, Optimal simulation + Belady\n");
+    printf("  GET  /api/page-replacement/examples   - Standard, Belady & locality presets\n");
+    printf("\nPhase 3 - Deadlock, Logs & Advisory Endpoints:\n");
+    printf("  POST /api/deadlock/banker             - Banker's algorithm safety verification\n");
+    printf("  POST /api/deadlock/request            - Resource request safety check\n");
+    printf("  POST /api/deadlock/detect             - Circular deadlock cycle detector\n");
+    printf("  GET  /api/deadlock/examples           - Textbook state presets\n");
+    printf("  POST /api/logs/analyze                - Multi-format log parser & burst detector\n");
+    printf("  GET  /api/logs/samples                - Sample syslog stream\n");
+    printf("  GET  /api/advisory/recommendations    - Advisory resource allocation engine\n");
 }
 
 int main(int argc, char *argv[]) {

@@ -65,7 +65,7 @@ export const api = {
   getProcesses: () => request<ProcessTableResponse>('/processes'),
   getProcessDetail: (pid: number) => request<ProcessDetail>(`/processes/${pid}`),
 
-  /* Phase 2: CPU Scheduling */
+  /* CPU Scheduling */
   simulateScheduling: (payload: { processes: SchedProcessInput[]; quantum: number }) =>
     request<SchedSimulationResponse>('/scheduling/simulate', {
       method: 'POST',
@@ -74,12 +74,12 @@ export const api = {
     }),
   getSchedulingExamples: () => request<SchedExamplesResponse>('/scheduling/examples'),
 
-  /* Phase 2: Memory Prediction */
+  /* Memory Prediction */
   getMemoryForecast: (horizon: number = 60, window: number = 10, threshold: number = 85.0) =>
     request<MemoryForecastResponse>(`/memory/forecast?horizon=${horizon}&window=${window}&threshold=${threshold}`),
   getMemoryHistory: () => request<MemoryHistoryResponse>('/memory/history'),
 
-  /* Phase 2: Page Replacement */
+  /* Page Replacement */
   simulatePageReplacement: (payload: { reference_string: number[]; frame_count: number }) =>
     request<PageSimulationResponse>('/page-replacement/simulate', {
       method: 'POST',
@@ -88,7 +88,7 @@ export const api = {
     }),
   getPageReplacementExamples: () => request<PageExamplesResponse>('/page-replacement/examples'),
 
-  /* Phase 3: Deadlock Detection & Avoidance */
+  /* Deadlock Detection & Avoidance */
   analyzeBanker: (payload: Partial<DeadlockState> & { example_id?: string }) =>
     request<BankerResult>('/deadlock/banker', {
       method: 'POST',
@@ -109,7 +109,7 @@ export const api = {
     }),
   getDeadlockExamples: () => request<DeadlockExamplesResponse>('/deadlock/examples'),
 
-  /* Phase 3: OS Log Analysis */
+  /* OS Log Analysis */
   analyzeLogs: (payload: { content?: string; log_text?: string; file_path?: string; min_severity?: string; category?: number; keyword?: string }) =>
     request<LogAnalysisResponse>('/logs/analyze', {
       method: 'POST',
@@ -118,7 +118,7 @@ export const api = {
     }),
   getLogSample: (id?: string) => request<LogSampleResponse>('/logs/samples' + (id ? `?id=${id}` : '')),
 
-  /* Phase 3: Resource Advisory */
+  /* Resource Advisory */
   getResourceAdvisory: () => request<ResourceAdvisoryResponse>('/advisory/recommendations'),
 };
 

@@ -381,7 +381,7 @@ export const OverviewPage: React.FC<OverviewPageProps> = ({
         </div>
       </div>
 
-      {/* Cross-Module Synthesis Grid (Phase 2 & Phase 3 Modules) */}
+      {/* Cross-Module Synthesis Grid (Analytical Engines & Simulation Subsystems) */}
       <div>
         <div className="flex items-center justify-between mb-3">
           <div className="flex items-center space-x-2">

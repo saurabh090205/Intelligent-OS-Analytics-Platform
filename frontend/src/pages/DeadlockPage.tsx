@@ -257,7 +257,7 @@ export const DeadlockPage: React.FC = () => {
               Deadlock Detection & Avoidance
             </h1>
             <span className="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-indigo-100 text-indigo-700">
-              Module 5 (Phase 3)
+              Safety & Avoidance Engine
             </span>
           </div>
           <p className="text-sm text-slate-500">

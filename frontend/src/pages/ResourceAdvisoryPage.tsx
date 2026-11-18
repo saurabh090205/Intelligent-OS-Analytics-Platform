@@ -100,7 +100,7 @@ export const ResourceAdvisoryPage: React.FC = () => {
               Advisory Resource Allocation Engine
             </h1>
             <span className="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-indigo-100 text-indigo-700">
-              Module 7 (Phase 3)
+              Intelligent Advisory Engine
             </span>
           </div>
           <p className="text-sm text-slate-500">

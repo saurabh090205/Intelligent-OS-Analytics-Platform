@@ -35,20 +35,20 @@ interface NavItemDef {
   key: NavItemKey;
   label: string;
   icon: React.ComponentType<{ className?: string }>;
-  phase: string;
+  tag: string;
   isImplemented: boolean;
 }
 
 const NAV_ITEMS: NavItemDef[] = [
-  { key: 'overview', label: 'Overview Dashboard', icon: Activity, phase: 'Phase 1', isImplemented: true },
-  { key: 'processes', label: 'Process Monitoring', icon: Terminal, phase: 'Phase 1', isImplemented: true },
-  { key: 'scheduling', label: 'CPU Scheduling', icon: Cpu, phase: 'Phase 2', isImplemented: true },
-  { key: 'memory', label: 'Memory Analytics', icon: Database, phase: 'Phase 2', isImplemented: true },
-  { key: 'deadlock', label: 'Deadlock Detection', icon: ShieldAlert, phase: 'Phase 3', isImplemented: true },
-  { key: 'page-replacement', label: 'Page Replacement', icon: Layers, phase: 'Phase 2', isImplemented: true },
-  { key: 'logs', label: 'System Log Analysis', icon: FileText, phase: 'Phase 3', isImplemented: true },
-  { key: 'resource-allocation', label: 'Resource Allocation', icon: Sliders, phase: 'Phase 3', isImplemented: true },
-  { key: 'settings', label: 'Settings & Architecture', icon: Settings, phase: 'Phase 1', isImplemented: true },
+  { key: 'overview', label: 'Overview Dashboard', icon: Activity, tag: 'Live', isImplemented: true },
+  { key: 'processes', label: 'Process Monitoring', icon: Terminal, tag: 'Telemetry', isImplemented: true },
+  { key: 'scheduling', label: 'CPU Scheduling', icon: Cpu, tag: 'Algorithms', isImplemented: true },
+  { key: 'memory', label: 'Memory Analytics', icon: Database, tag: 'Forecast', isImplemented: true },
+  { key: 'deadlock', label: 'Deadlock Detection', icon: ShieldAlert, tag: 'Safety', isImplemented: true },
+  { key: 'page-replacement', label: 'Page Replacement', icon: Layers, tag: 'Simulation', isImplemented: true },
+  { key: 'logs', label: 'System Log Analysis', icon: FileText, tag: 'Audit', isImplemented: true },
+  { key: 'resource-allocation', label: 'Resource Allocation', icon: Sliders, tag: 'Advisory', isImplemented: true },
+  { key: 'settings', label: 'Settings & Architecture', icon: Settings, tag: 'Engine', isImplemented: true },
 ];
 
 export const Sidebar: React.FC<SidebarProps> = ({
@@ -106,7 +106,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                     : 'bg-slate-800 text-slate-400'
                 }`}
               >
-                {item.phase}
+                {item.tag}
               </span>
             </button>
           );

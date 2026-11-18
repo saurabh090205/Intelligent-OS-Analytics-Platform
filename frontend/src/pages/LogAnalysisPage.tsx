@@ -162,7 +162,7 @@ export const LogAnalysisPage: React.FC = () => {
               Operating System Log Analysis
             </h1>
             <span className="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-indigo-100 text-indigo-700">
-              Module 6 (Phase 3)
+              Log Telemetry & Parser Engine
             </span>
           </div>
           <p className="text-sm text-slate-500">

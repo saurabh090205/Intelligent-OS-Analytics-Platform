@@ -24,13 +24,13 @@ interface TopNavbarProps {
 
 const TAB_TITLES: Record<NavItemKey, { title: string; subtitle: string }> = {
   overview: { title: 'System Overview Dashboard', subtitle: 'Live CPU, memory, and process telemetry' },
-  processes: { title: 'Process Monitoring', subtitle: 'Inspect active system processes from /proc' },
-  scheduling: { title: 'CPU Scheduling Recommendation', subtitle: 'Phase 2: FCFS, SJF, SRTF, Priority, Round Robin' },
-  memory: { title: 'Memory Usage Prediction', subtitle: 'Phase 2: Forecasting models and trend detection' },
-  deadlock: { title: 'Deadlock Prediction & Detection', subtitle: 'Phase 3: Safe-state Banker\'s algorithm simulation' },
-  'page-replacement': { title: 'Page Replacement Simulation', subtitle: 'Phase 2: FIFO, LRU, Optimal algorithms' },
-  logs: { title: 'System Log Analysis', subtitle: 'Phase 3: Log parsing, severity counting, error detection' },
-  'resource-allocation': { title: 'AI-Based Resource Allocation', subtitle: 'Phase 3: Explainable recommendations' },
+  processes: { title: 'Process Monitoring', subtitle: 'Inspect active system processes and resource consumption' },
+  scheduling: { title: 'CPU Scheduling Recommendation', subtitle: 'FCFS, SJF, SRTF, Priority, and Round Robin scheduling simulation' },
+  memory: { title: 'Memory Usage Prediction', subtitle: 'Forecasting models, linear regression, and exhaustion trends' },
+  deadlock: { title: 'Deadlock Prediction & Detection', subtitle: 'Dijkstra\'s Banker\'s algorithm safety verification and cycle detection' },
+  'page-replacement': { title: 'Page Replacement Simulation', subtitle: 'FIFO, LRU, and Optimal page replacement comparison & Bélády\'s anomaly' },
+  logs: { title: 'System Log Analysis', subtitle: 'Multi-format log parsing, severity counting, and error burst detection' },
+  'resource-allocation': { title: 'AI-Based Resource Allocation', subtitle: 'Explainable heuristic recommendations and subsystem pressure guidance' },
   settings: { title: 'Platform Architecture & Settings', subtitle: 'Engine specs, C REST API endpoints, and diagnostics' },
 };
 

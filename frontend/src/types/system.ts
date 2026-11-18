@@ -2,7 +2,7 @@ export interface ApiHealth {
   status: string;
   service: string;
   version: string;
-  phase: string;
+  phase?: string;
   platform: string;
   uptime_seconds: number;
   timestamp: number;
@@ -110,7 +110,7 @@ export interface HistoryPoint {
   memory: number;
 }
 
-/* ==================== Phase 2: CPU Scheduling Types ==================== */
+/* ==================== CPU Scheduling Types ==================== */
 
 export interface SchedProcessInput {
   pid: number;
@@ -187,7 +187,7 @@ export interface SchedExamplesResponse {
   examples: SchedExample[];
 }
 
-/* ==================== Phase 2: Memory Prediction Types ==================== */
+/* ==================== Memory Prediction Types ==================== */
 
 export interface ForecastPoint {
   timestamp: number;
@@ -234,7 +234,7 @@ export interface MemoryHistoryResponse {
   samples: MemoryHistorySample[];
 }
 
-/* ==================== Phase 2: Page Replacement Types ==================== */
+/* ==================== Page Replacement Types ==================== */
 
 export interface PageStep {
   step: number;
@@ -286,7 +286,7 @@ export interface PageExamplesResponse {
   examples: PageExample[];
 }
 
-/* ==================== Phase 3: Deadlock Management Types ==================== */
+/* ==================== Deadlock Management Types ==================== */
 
 export interface DeadlockState {
   num_processes: number;
@@ -354,7 +354,7 @@ export interface DeadlockExamplesResponse {
   examples: DeadlockExample[];
 }
 
-/* ==================== Phase 3: OS Log Analysis Types ==================== */
+/* ==================== OS Log Analysis Types ==================== */
 
 export interface LogEntry {
   line: number;
@@ -404,7 +404,7 @@ export interface LogSampleResponse {
   timestamp: number;
 }
 
-/* ==================== Phase 3: Resource Advisory Types ==================== */
+/* ==================== Resource Advisory Types ==================== */
 
 export interface AdvisoryOverview {
   cpu_pressure: string;

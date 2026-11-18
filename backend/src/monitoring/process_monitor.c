@@ -466,13 +466,6 @@ int process_monitor_update(process_table_t *out_table) {
 #if !defined(_WIN32)
     return scan_linux_proc(out_table, total_ram_kb, core_count);
 #else
-    /* Check if Linux /proc exists (e.g. simulated or mounted) */
-    FILE *test_proc = fopen("/proc/stat", "r");
-    if (test_proc) {
-        fclose(test_proc);
-        /* Fall back to Windows process scan if /proc directory scan is unavailable */
-        return scan_windows_processes(out_table, total_ram_kb, core_count);
-    }
     return scan_windows_processes(out_table, total_ram_kb, core_count);
 #endif
 }
