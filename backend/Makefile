@@ -4,6 +4,7 @@ LDFLAGS =
 
 ifeq ($(OS),Windows_NT)
     TARGET = bin/os_platform_backend.exe
+    CLI_TARGET = bin/os_platform_cli.exe
     TEST_TARGET = bin/test_monitoring.exe
     TEST2_TARGET = bin/test_phase2.exe
     TEST3_TARGET = bin/test_phase3.exe
@@ -12,6 +13,7 @@ ifeq ($(OS),Windows_NT)
     RM = del /Q /F
 else
     TARGET = bin/os_platform_backend
+    CLI_TARGET = bin/os_platform_cli
     TEST_TARGET = bin/test_monitoring
     TEST2_TARGET = bin/test_phase2
     TEST3_TARGET = bin/test_phase3
@@ -21,6 +23,7 @@ else
 endif
 
 SRCS = src/main.c \
+       src/cli/terminal_ui.c \
        src/api/server.c \
        src/api/routes.c \
        src/monitoring/process_monitor.c \
@@ -33,6 +36,19 @@ SRCS = src/main.c \
        src/logs/log_analyzer.c \
        src/advisory/resource_advisory.c \
        src/utils/json_utils.c
+
+CLI_SRCS = src/main_cli.c \
+           src/cli/terminal_ui.c \
+           src/monitoring/process_monitor.c \
+           src/monitoring/cpu_monitor.c \
+           src/monitoring/memory_monitor.c \
+           src/scheduling/cpu_scheduler.c \
+           src/memory/memory_prediction.c \
+           src/page_replacement/page_replacement.c \
+           src/deadlock/deadlock.c \
+           src/logs/log_analyzer.c \
+           src/advisory/resource_advisory.c \
+           src/utils/json_utils.c
 
 TEST_SRCS = tests/test_monitoring.c \
             src/monitoring/process_monitor.c \
@@ -57,12 +73,17 @@ TEST3_SRCS = tests/test_phase3.c \
              src/memory/memory_prediction.c \
              src/utils/json_utils.c
 
-all: $(TARGET)
+all: $(TARGET) $(CLI_TARGET)
 
 $(TARGET): $(SRCS)
 	@$(MKDIR)
 	$(CC) $(CFLAGS) -o $(TARGET) $(SRCS) $(LDFLAGS)
 	@echo [Build complete] $(TARGET)
+
+$(CLI_TARGET): $(CLI_SRCS)
+	@$(MKDIR)
+	$(CC) $(CFLAGS) -o $(CLI_TARGET) $(CLI_SRCS) $(LDFLAGS)
+	@echo [Build complete] $(CLI_TARGET)
 
 test: $(TEST_TARGET) $(TEST2_TARGET) $(TEST3_TARGET)
 	@echo [Running Phase 1 Monitoring Tests]

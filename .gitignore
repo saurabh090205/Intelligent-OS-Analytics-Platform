@@ -6,7 +6,9 @@ backend/bin/
 *.out
 
 # Node dependencies and build artifacts
+node_modules/
 frontend/node_modules/
+scripts/node_modules/
 frontend/dist/
 *.log
 !backend/tests/sample.log
